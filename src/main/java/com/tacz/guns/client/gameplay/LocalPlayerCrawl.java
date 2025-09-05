@@ -32,7 +32,7 @@ public class LocalPlayerCrawl {
         if (crawCooldownTicks > 0) {
             return;
         }
-        if (player.isSpectator() || player.isPassenger() || !player.isOnGround()) {
+        if (player.isSpectator() || player.isPassenger()) {
             return;
         }
         ResourceLocation gunId = iGun.getGunId(mainhandItem);
@@ -62,7 +62,7 @@ public class LocalPlayerCrawl {
             return;
         }
         // 如果玩家是观察者模型、骑乘、跳跃、在游泳、不在地上，取消
-        if (player.isSpectator() || player.isPassenger() || player.jumping || player.isSwimming() || !player.isOnGround()) {
+        if (player.isSpectator() || player.isPassenger() || player.isSwimming()) {
             isCrawling = false;
             this.setCrawlPose();
             return;
